@@ -2,7 +2,7 @@ import {useState} from 'react';
 import {areAnagrams, isPalindrome} from './stringUtils';
 import { MdCheck, MdErrorOutline } from 'react-icons/md';
 
-export const StringsView = () => {
+const StringsView = () => {
     const [isCaseSensitive, setIsCaseSensitive] = useState(false);
     const [string1, setString1] = useState('');
     const [string2, setString2] = useState('');
@@ -46,3 +46,5 @@ export const StringsView = () => {
         </div>
     );
 }
+
+export default StringsView;
