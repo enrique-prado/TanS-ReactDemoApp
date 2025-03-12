@@ -1,3 +1,4 @@
+
 export const areAnagrams = (str1: string, str2: string, isCaseSensitive = false): boolean => {
 
     // Setup dictionary where the key is the character and the value is the count
@@ -30,5 +31,19 @@ export const areAnagrams = (str1: string, str2: string, isCaseSensitive = false)
     }
     // return Object.values(charCounts).every(count => count === 0);
 
+    return true;
+}
+
+export const isPalindrome = (str: string): boolean => {
+    const strLen = str.length;
+    if (strLen === 0) {
+        return false;
+    }
+    
+    for (let i = 0; i < strLen / 2; i++) {
+        if (str[i] !== str[strLen - 1 - i]) {
+            return false;
+        }
+    }
     return true;
 }
