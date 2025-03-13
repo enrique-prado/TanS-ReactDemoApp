@@ -45,6 +45,7 @@ li {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  gap: 1rem;
 }
 li i {
   margin-left: 10px;

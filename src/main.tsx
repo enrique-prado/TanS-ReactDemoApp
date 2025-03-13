@@ -15,6 +15,7 @@ import reportWebVitals from './reportWebVitals.ts'
 
 import App from './App.tsx'
 import StringsView from './StringsView.tsx'
+import PersonsPage from './PersonsPage.tsx'
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -23,6 +24,7 @@ const rootRoute = createRootRoute({
         <nav className='App-header'>
           <Link to="/">Home</Link>
           <Link to="/strings">Strings View</Link>
+          <Link to="/persons">Persons View</Link>
         </nav>
       </header>
       <Outlet />
@@ -43,7 +45,13 @@ const stringsViewRoute = createRoute({
   component: StringsView,
 })
 
-const routeTree = rootRoute.addChildren([indexRoute, stringsViewRoute])
+const personsViewRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/persons',
+  component: PersonsPage,
+})
+
+const routeTree = rootRoute.addChildren([indexRoute, stringsViewRoute, personsViewRoute])
 
 const router = createRouter({
   routeTree,
